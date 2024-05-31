@@ -1,0 +1,190 @@
+{% extends "Main.html" %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a6/Philips_Jacobsz.%2C_C._%28Caspar%3B_1732-1789%29%2C_Afb_ANWD00008000001.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* Для обеспечения читабельности контента */
+  .container {
+    background: rgba(255, 255, 255, 0.8); /* Белый фон с прозрачностью */
+    padding: 20px;
+    border-radius: 10px;
+  }
+</style>
+<div class="container mt-5">
+  <!-- Section: Restaurant Description -->
+  <div class="row mb-5">
+    <div class="col-lg-6">
+      <img src="https://kd-vlg.ru/upload/iblock/9f9/thsyq04xb8928mkts60fxtgk4c5fhijz/20220916_113409.jpg" class="img-fluid rounded" alt="Княгининский Двор">
+    </div>
+    <div class="col-lg-6 d-flex align-items-center">
+      <div>
+        <h2 class="display-4">РЕСТОРАН ВОЛЖСКОЙ КУХНИ</h2>
+        <p class="lead">
+          «Княгининский Двор» расположен в историческом центре Волгограда, на месте старинного купеческого дома, стоявшего 200 лет назад на улице Княгининской.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Unique Cuisine -->
+  <div class="row mb-5">
+    <div class="col-lg-6 order-lg-2">
+      <img src="https://kd-vlg.ru/upload/iblock/f36/0d2eef3ks5c9breb6d3zamgctp00pm06/67-1_11zon.jpg" class="img-fluid rounded" alt="Волжская Кухня">
+    </div>
+    <div class="col-lg-6 order-lg-1 d-flex align-items-center">
+      <div>
+        <h2 class="display-4">Уникальная ВОЛЖСКАЯ КУХНЯ</h2>
+        <p class="lead">
+          Ресторан «Княгининский Двор» сочетает в себе современный формат и высокие стандарты качества и покоряет гостей уютной атмосферой и прекрасной кухней.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Natural Products -->
+  <div class="row mb-5">
+    <div class="col-lg-6">
+      <img src="https://kd-vlg.ru/upload/iblock/378/g9zdsgq66p6sbmmau38orzybo603vvuk/187-1-_1_.jpg" class="img-fluid rounded" alt="Натуральные Продукты">
+    </div>
+    <div class="col-lg-6 d-flex align-items-center">
+      <div>
+        <h2 class="display-4">Натуральные ПРОДУКТЫ С СОБСТВЕННОЙ ФЕРМЫ</h2>
+        <p class="lead">
+          Символ «Княгининского Двора» – выращенный на собственном фермерском хозяйстве веслонос – древний представитель отряда осетровых пород. Ресторан предлагает блюда из свежей волжской рыбы, собственных фермерских продуктов и характерных для региона Поволжья, таких как: горчичное масло, красные томаты, степные ягоды, местные травы, семечки.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Awards -->
+  <div class="row mb-5">
+    <h2 class="display-4 text-center">НАС ВЫСОКО ОЦЕНИВАЮТ</h2>
+    <div class="col-md-3 text-center">
+      <div class="card">
+        <img src="https://kd-vlg.ru/upload/iblock/d38/noj2aaqapysdnclry753xzb09giqqzbd/restaurants_guru_2020.jpg" class="card-img-top" alt="Награда 1">
+        <div class="card-body">
+          <p class="card-text">ЛУЧШИЙ РОМАНТИЧЕСКИЙ РЕСТОРАН ВОЛГОГРАДА ПО ВЕРСИИ RESTAURANT GURU<br>2020</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 text-center">
+      <div class="card">
+        <img src="https://kd-vlg.ru/upload/iblock/74a/rz4wxxfwt0u80iaqo7k6a66rzt0byshy/volgastrofest_2021.jpg" class="card-img-top" alt="Награда 2">
+        <div class="card-body">
+          <p class="card-text">САМЫЙ ПОПУЛЯРНЫЙ СЕТ И ЛУЧШИЙ ЛОКАЛЬНЫЙ СЕТ НА ФЕСТИВАЛЕ VOLGASTRO FEST<br>2021</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 text-center">
+      <div class="card">
+        <img src="https://kd-vlg.ru/upload/iblock/c4e/n6xbe32micdpcgplnxq9lq0p0jgp3m97/yandex.jpg" class="card-img-top" alt="Награда 3">
+        <div class="card-body">
+          <p class="card-text">НАГРАДА ОТ ЯНДЕКСА «ХОРОШЕЕ МЕСТО», ВЫБОР ПОЛЬЗОВАТЕЛЕЙ С РЕЙТИНГОМ 4,9<br>2023</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3 text-center">
+      <div class="card">
+        <img src="https://kd-vlg.ru/upload/iblock/62b/rnij1pzy1uo2oss9xsw0nvjjgfrt4r2r/tripadvisor_2017.jpg" class="card-img-top" alt="Награда 4">
+        <div class="card-body">
+          <p class="card-text">СЕРТИФИКАТ КАЧЕСТВА ЗА ПОЛУЧЕНИЕ ВЫСОКИХ ОЦЕНОК ОТ TRIPADVISOR<br>2017</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Carousel -->
+  <div id="carouselExampleIndicators" class="carousel slide mb-5" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"></li>
+      <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://kd-vlg.ru/upload/iblock/733/rhgywc8ys4n42hqbk6cam79lg3ygz8ly/39-1-_1_.jpg" class="d-block w-100" alt="Slide 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>ФИРМЕННЫЕ БЛЮДА</h5>
+          <p>Половинки баклажана с сальсой, мягким сыром и пряными травами.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://kd-vlg.ru/upload/iblock/cf7/1s5pp79xvgw6p57466hp3so4qzzxcjgp/104-1-_1_.jpg" class="d-block w-100" alt="Slide 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>ФИРМЕННЫЕ БЛЮДА</h5>
+          <p>Мидии в белом вине с ароматным травами и хрустящими гренками.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://kd-vlg.ru/upload/iblock/125/q00967iv80gel9od1zm8cvrk3up2n163/158_-1-_2_-_1_.jpg" class="d-block w-100" alt="Slide 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>ФИРМЕННЫЕ БЛЮДА</h5>
+          <p>Слоеный торт из меренги, малинового крема и сливочного мусса.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://kd-vlg.ru/upload/iblock/d5c/v8c1ackb4gatwbx6devg22zhe1hnzjv8/76-1-_1_.jpg" class="d-block w-100" alt="Slide 4">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>ФИРМЕННЫЕ БЛЮДА</h5>
+          <p>Волжский сом на горчичном масле с луком и томатами.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://kd-vlg.ru/upload/iblock/a65/bplkrb26k742ueulxlgqk9qac2362912/138-1-_1_.jpg" class="d-block w-100" alt="Slide 5">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>ФИРМЕННЫЕ БЛЮДА</h5>
+          <p>Утиная грудка со спаржей, медовой тыквой и соусом с пряной вишней.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Предыдущий</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Следующий</span>
+    </a>
+  </div>
+
+  <!-- Section: Location -->
+  <div class="row mb-5">
+    <div class="col-lg-6">
+      <h2 class="display-4">Наше местоположение</h2>
+      <p class="lead">
+        Ресторан «Княгининский Двор» находится по адресу: Академическая ул., 8, Волгоград, Волгоградская обл., Россия, 400001.
+      </p>
+      <p class="lead">
+        Мы открыты ежедневно с 10:00 до 22:00. Добро пожаловать!
+      </p>
+    </div>
+    <div class="col-lg-6">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2140.120540953707!2d44.51166261621408!3d48.71006817927243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4105f4e509a5b9f9%3A0x4d7eebc2b62c8e96!2sAkademicheskaya%20Ulitsa%2C%208%2C%20Volgograd%2C%20Volgograd%20Oblast%2C%20Russia%2C%20400001!5e0!3m2!1sen!2sru!4v1685084609582!5m2!1sen!2sru" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <!-- Section: Contact Information -->
+  <div class="row mb-5">
+    <div class="col-lg-12">
+      <h2 class="display-4">Контактная информация</h2>
+      <p class="lead">
+        Телефон: +7 (8442) 55-55-55 <br>
+        Email: info@kd-vlg.ru <br>
+        Адрес: Академическая ул., 8, Волгоград, Волгоградская обл., Россия, 400001
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+{% endblock %}

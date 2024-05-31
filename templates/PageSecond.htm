@@ -1,0 +1,76 @@
+{% extends "Main.html" %}
+
+{% block title %}Меню{% endblock %}
+
+{% block content %}
+   <!-- Содержимое страницы -->
+    <div class="TypeList">
+    <div class="containerbar overflow-y-hidden">
+{% for btn in button %}
+   <p class="d-inline-flex gap-1 ">
+  <a href="#" class="btn btn-primary rounded-pill" role="button" data-bs-toggle="button" aria-pressed="true">{{ btn[1] }}</a>
+</p>
+{% endfor %}
+    </div>
+
+
+        <div class="menucards">
+        <div class="row">
+        {% for menu in menulist %}
+            <!-- Ряд с карточками -->
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                    <div class="card-body text-center">
+                    <img src="{{ menu[5] }}" class="card-img-top" alt="Image 3" style="width: 200; height: 200px;" >
+            <a type="button" class="btn text-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            {{ menu[1] }}
+            </a>
+            </div>
+
+            <!-- Модальное окно -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">{{ menu[1] }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                  </div>
+                  <div class="modal-body">
+                  <div class="row">
+                  <div>
+                   <img src="{{ menu[5] }}" class="card-img-top" alt="Image 3">
+                   </div>
+                   <div>
+                   <h2>Состав</h2>
+                   <p>
+                    {{ menu[2] }}
+                   </p>
+                  <p class="fs-5">
+                   {{ menu[4] }}г ~ {{ menu[3] }}&#8381;
+                   </p>
+                   </div>
+
+                  </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                    <button type="button" class="btn btn-primary">Добавить</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+                        <div class="card-body">
+                        <p class="fs-5"> {{ menu[3] }} &#8381;
+                        <a href="#" class="btn btn-primary rounded-pill float-end">Добавить</a>
+                        </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+    </div>
+
+{% endblock %}

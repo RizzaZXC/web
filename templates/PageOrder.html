@@ -1,0 +1,119 @@
+{% extends "Main.html" %}
+{% block title %}Резервирование{% endblock %}
+{% block content %}
+    <style>
+        body {
+            background-color: #F8F1E4; /* Цвет панели управления Bootstrap */
+        }
+        .line {
+            flex: 1;
+            height: 2px;
+            background-color: #000; /* Цвет линии */
+        }
+        .line-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .reservation-section {
+            background-color: #ffffff; /* Цвет фона секции */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 800px;
+        }
+    </style>
+
+    <div class="container mt-5 reservation-section">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <!-- Основная картинка с линиями -->
+        <div class="row justify-content-center">
+                        <div class="line-container">
+                    <div class="line"></div>
+                    <img src="https://kd-vlg.ru/local/templates/dvor/img/main/restaurant/restaurant.webp" class="img-fluid mx-3" alt="Ресторан">
+                    <div class="line"></div>
+                </div>
+            <div class="col-lg-8 text-center">
+                <h2 class="display-4">ЗАКАЗАТЬ ДОСТАВКУ</h2>
+                <p class="lead">-20% СКИДКА ПРИ САМОВЫВОЗЕ</p>
+                <p class="lead">Выберите блюда из меню или закажите доставку по телефону</p>
+            </div>
+        </div>
+
+        <form method="post">
+            <div class="mb-3">
+                <label for="fio" class="form-label">ФИО</label>
+                <input name="fio" class="form-control" placeholder="Иванов Иван Иванович" type="text" aria-label="default input example">
+            </div>
+
+            <div class="mb-3">
+                <label for="bookdate" class="form-label">Дата и время</label>
+                <input name="bookdate" class="form-control" placeholder="2024-12-30 00:00" type="text" aria-label="default input example">
+            </div>
+
+            <div class="mb-3">
+                <label for="numtable" class="form-label">Номер стола</label>
+                <input name="numtable" class="form-control" type="text" aria-label="default input example">
+            </div>
+
+            <div class="mb-3">
+                <label for="orderedfood" class="form-label">Заказанная еда</label>
+                <input name="orderedfood" class="form-control" type="text" aria-label="default input example">
+            </div>
+
+            <div class="mb-3">
+                <label for="numppl" class="form-label">Количество людей</label>
+                <input name="numppl" class="form-control" type="text" aria-label="default input example">
+            </div>
+
+            <div class="mb-3">
+                <label for="phonnumb" class="form-label">Номер телефона</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend3">+7</span>
+                    <input name="phonnumb" placeholder="XXX-XXX-XX-XX" class="form-control" type="text" aria-label="default input example">
+                </div>
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="validationFormCheck1" required>
+                <label class="form-check-label" for="validationFormCheck1">Отправляя данные, я ознакомлен с политикой конфиденциальности</label>
+                <div class="invalid-feedback">Example invalid feedback text</div>
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="validationFormCheck2" required>
+                <label class="form-check-label" for="validationFormCheck2">Отправляя данные, я соглашаюсь на обработку персональных данных</label>
+                <div class="invalid-feedback">Example invalid feedback text</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submitButton" disabled>Забронировать</button>
+        </form>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const checkbox1 = document.getElementById('validationFormCheck1');
+        const checkbox2 = document.getElementById('validationFormCheck2');
+        const submitButton = document.getElementById('submitButton');
+
+        function toggleSubmitButton() {
+          submitButton.disabled = !(checkbox1.checked && checkbox2.checked);
+        }
+
+        checkbox1.addEventListener('change', toggleSubmitButton);
+        checkbox2.addEventListener('change', toggleSubmitButton);
+      });
+    </script>
+{% endblock %}
